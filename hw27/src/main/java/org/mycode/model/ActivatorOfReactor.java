@@ -27,7 +27,7 @@ public class ActivatorOfReactor {
     }
 
     public void stopReactor() {
-        for (int i = 0; reactor.getEnergy() > 2; i++) {
+        while (reactor.getEnergy() > 2) {
             reactor.setEnergy(reactor.getEnergy() - 2);
             try {
                 Thread.sleep(50);
