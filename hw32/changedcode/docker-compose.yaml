@@ -1,0 +1,45 @@
+version: '3.7'
+
+networks:
+  inet:
+    driver: bridge
+
+volumes:
+  datas:
+
+services:
+
+  db:
+    image: mysql
+    ports:
+      - 3306:3306
+    networks:
+      - inet
+    container_name: mysql-db
+    hostname: database
+    restart: always
+    volumes:
+      - datas
+    environment:
+      MYSQL_ROOT_PASSWORD: my-secret-pw
+      MYSQL_DATABASE: recorddb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: secret
+
+  app:
+    build: .
+    ports:
+      - 8080:8080
+    networks:
+      - inet
+    restart: always
+    container_name: app
+    hostname: webservice
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
