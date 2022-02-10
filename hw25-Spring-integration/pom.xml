@@ -20,7 +20,7 @@
         <spring.batch.version>4.2.1.RELEASE</spring.batch.version>
         <spring.data.version>2.2.5.RELEASE</spring.data.version>
         <jpa.version>2.2</jpa.version>
-        <hibernate.version>5.4.12.Final</hibernate.version>
+        <hibernate.version>5.4.24.Final</hibernate.version>
         <dbcp.version>2.7.0</dbcp.version>
         <cglib.version>3.3.0</cglib.version>
     </properties>
