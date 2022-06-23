@@ -17,7 +17,7 @@
         <mail.version>1.4</mail.version>
         <mysql.version>8.0.19</mysql.version>
         <spring.version>5.2.4.RELEASE</spring.version>
-        <spring.batch.version>4.2.1.RELEASE</spring.batch.version>
+        <spring.batch.version>4.2.3.RELEASE</spring.batch.version>
         <spring.data.version>2.2.5.RELEASE</spring.data.version>
         <jpa.version>2.2</jpa.version>
         <hibernate.version>5.4.12.Final</hibernate.version>
